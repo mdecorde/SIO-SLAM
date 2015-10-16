@@ -5,7 +5,7 @@ echo palindrome ($str). "\n";
 echo palindrome ($str2). "\n";
 
 function palindrome($string) {
-    $x = ($string == strrev($string));
+    $x = ($string == strrev($string)); // MD: retourner le résultat directement
     return $x;
 }
 ?>

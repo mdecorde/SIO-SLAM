@@ -6,14 +6,15 @@ echo "Saisir Prénom"."\n";
 $Pnom = lireClavier();
 
 
-ltrim($NOM);
+ltrim($NOM); // utiliser trim() plutot que ltrim et rtrim
 rtrim($NOM);
 ltrim($Pnom);
 rtrim($Pnom);
 $Pnom = strtolower($Pnom);
 $Pnom[0]= strtoupper($Pnom[0]);
 $positionDuTiret = strpos($Pnom, '-');
-$Pnom[$positionDuTiret+1] = strtoupper($Pnom[$positionDuTiret+1]);
+$Pnom[$positionDuTiret+1] = strtoupper($Pnom[$positionDuTiret+1]); // il faut tester que "-" n'est pas le dernier char
+// cette solution est plus sympa, mais elle ne gère pas le cas où il y a plusieurs "-" ex : Marie-Paul-Jacques
 
  /*     
 for ($i=1 ; $i <=  strlen($Pnom); $i++){

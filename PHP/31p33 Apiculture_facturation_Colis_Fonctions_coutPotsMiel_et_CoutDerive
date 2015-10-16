@@ -2,11 +2,8 @@
 
 require_once '..\\Lib\U.php';
 
-
-
-
 function coutPotsMiel($qtéPotsDeMiel) {
-    $nbPotsDeMiel_Ristourne = 3;                
+    $nbPotsDeMiel_Ristourne = 3;  // MD: constantes à sortir    
     $prixHTPotDeMiel = 6;                       
     $prixHTPotDeMiel_Ristourne = 5;             
     $facture_Pots_De_Miel_HT = 0;
@@ -25,7 +22,7 @@ function coutPotsMiel($qtéPotsDeMiel) {
 }
 
 function coutDerives($qtéProduitsDérivés) {
-    $nbProduitDérivé_Ristourne = 5;
+    $nbProduitDérivé_Ristourne = 5; // MD: constantes à sortir  
     $prixHTProduitDérivé = 4;
     $RistourneProduitDérivé = 0.2;
     switch (TRUE) {
@@ -39,7 +36,7 @@ function coutDerives($qtéProduitsDérivés) {
 }
 
 function frais_De_Ports($Montant_HT) {
-    $fraisDePorts = 0.08; /* du montant HT */ $minfraisDePorts = 4;
+    $fraisDePorts = 0.08; /* du montant HT */ $minfraisDePorts = 4; // MD: constantes à sortir  et éviter de mélanger commentaires et décaration de variable
     switch (TRUE) {
         case (($fraisDePorts * $Montant_HT) > $minfraisDePorts) :
             $frais_de_Port = ($fraisDePorts * $Montant_HT);

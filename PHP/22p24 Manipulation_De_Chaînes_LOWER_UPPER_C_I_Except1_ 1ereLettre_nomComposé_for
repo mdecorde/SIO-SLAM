@@ -6,7 +6,7 @@ echo "Saisir Prénom"."\n";
 $Pnom = lireClavier();
 
 
-ltrim($NOM);
+ltrim($NOM); // utiliser trim() plutot que ltrim et rtrim
 rtrim($NOM);
 ltrim($Pnom);
 rtrim($Pnom);
@@ -18,10 +18,10 @@ $positionDuTiret = strpos($Pnom, '-');
 $Pnom[$positionDuTiret+1] = strtoupper($positionDuTiret+1);
  */
 
-       
+
 for ($i=1 ; $i < strlen($Pnom); $i++){
     if($Pnom[$i] == '-'){
-        $Pnom[$i+1]=strtoupper($Pnom[$i+1]);
+        $Pnom[$i+1]=strtoupper($Pnom[$i+1]); // il faut tester si "-" n'est pas le dernier char 
     }
     //else{}
 }

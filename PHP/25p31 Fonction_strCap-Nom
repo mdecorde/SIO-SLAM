@@ -5,13 +5,13 @@ $str = "jEan-pIERRE-mArie-xAVier";
 echo strCapNom($str);
 
 function strCapNom($str) {
-    $prem = strtoupper($str[0]);
+    $prem = strtoupper($str[0]); // MD: vérifier la taille de str avant
     if (strlen($str) > 1) {
         $resteStr = strtolower(substr($str, 1));
-        if (strpos($resteStr, "-")) {
+        if (strpos($resteStr, "-")) { // MD: petite optimisation :-)
             for ($i = 1; $i <= strlen($resteStr) - 1; $i++) {
                 if ($resteStr[$i] == "-") {
-                    $resteStr[$i + 1] = strtoupper($resteStr[$i + 1]);
+                    $resteStr[$i + 1] = strtoupper($resteStr[$i + 1]); // MD: vérifier si la taille de resteStr est i+1
                 }
             }
         }

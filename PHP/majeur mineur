@@ -1,13 +1,16 @@
+#!/usr/bin/php
 <?php
-if($argc == 2){
-    if($argv[1] <18){
-        echo 'Vous êtes mineur(e)';
+if ($argc == 2) {
+    if (!is_numeric($argv[1])) {
+	echo 'vous devez rentrer un age';
+	return;
     }
-    else {
+    if ($argv[1] < 18) {
+        echo 'Vous êtes mineur(e)';
+    } else {
         echo 'vous êtes majeur(e)';
     }
-}
-else {
+} else {
     echo 'Les arguments ne correspondent pas';
 }
 ?>

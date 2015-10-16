@@ -1,4 +1,4 @@
- <?php //ATTENTION !!! la méthode utilisée ici fonctionne pour le moment sur php mais elle n'est pas dans les bonnes procédures
+ <?php //ATTENTION !!! la méthode utilisée ici fonctionne pour le moment sur php mais elle n'est pas dans les bonnes procédures // MD : pratiques ?
 require_once '..\Lib\U.php';
 echo "Saisir le nombre de jours roulés". "\n";
 $jours = lireClavier();
@@ -10,10 +10,12 @@ $ch = lireClavier();
 $prix = 0;
 
 //Constantes en paramètres
+// MD: ecrire les constante en majuscule
 $forfait = 50;      $kmOfferts = 50;    $fact_km = 0.2;
 $Ch_Maj = 10;        $kmMajorés = 450;   $fact_km_maj = 0.25;
 $majForfait = 0.1;
 
+// MD: pour le debug, mettre chaque sous résultat dans une variable 
 $prix = ($jours * $forfait) //forfait journalier $test0
         + (($ch > $Ch_Maj) * $jours * $forfait * $majForfait) //majoration si ch>$Ch_Maj $test1
         + (($km > $kmOfferts) *  ($km < $kmMajorés) * ($km - $kmOfferts) * $fact_km) //facturation des km entre 50 et 500 $test2
@@ -23,6 +25,7 @@ $prix = ($jours * $forfait) //forfait journalier $test0
 echo "Prix facturé : " . $prix . "\n";
 
 //Tests
+// MD: éviter de recalculer 2 fois la meme chose, tu pouvais calculer le prix à partir des tests ?
 $test0 = ($jours * $forfait);
 $test1 = (($ch > $Ch_Maj) * $jours * $forfait * $majForfait);
 $conditionTest1 = ($ch > $Ch_Maj) *1;

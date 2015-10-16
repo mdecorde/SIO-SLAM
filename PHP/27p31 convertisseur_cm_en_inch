@@ -1,17 +1,17 @@
 <?php
 
-//nombre à convertir
+//nombre à convertir // MD : en maj 
 $index = 152.31;
 $inch = 2.54;
 
-echo "Pour 1cm = " . $inch . " inch" . "\n" . $index . " cm.";
+echo "Pour 1cm = " . $inch . " inch" . "\n" . $index . " cm."; // MD: mettre ''. $index . " cm."'' dans le prochain echo pour la lecture
 echo Convertir_en_inch($index) . "inch" . "\n";
 
 function Convertir_en_inch($reel) {
 //constantes en paramètres
-    $inch = 2.54;
+    $inch = 2.54; // MD: constante déjà déclarée
     //oppération
-    $res = ($reel / $inch);
+    $res = ($reel / $inch); // MD: retourner directement le résultat (parce que le calcul est simple)
     return $res;
 }
 /*

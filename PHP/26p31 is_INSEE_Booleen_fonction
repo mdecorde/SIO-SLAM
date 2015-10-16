@@ -6,7 +6,7 @@ echo is_INSEE($NoInsee). "\n";
 echo is_INSEE($NoInsee2) . "\n";
 
 function is_INSEE ($str) {
-    if(($str[0] == '1' || $str[0] == '2') && strlen($str) == 13 ) {
+    if(($str[0] == '1' || $str[0] == '2') && strlen($str) == 13 ) { // MD: tu peux retouner directement le résultat du test 'if'
         return TRUE;
     }
     else {
