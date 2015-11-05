@@ -14,12 +14,13 @@ function changer_index(&$tableau, $index, $nouvelle_Clé) {
             case TRUE :
                 
                 if ($key != $nouvelle_Clé){
-                    $tableau[$index] = $tableau[$key];
+                    $tmp = $tableau[$key];
                     unset($tableau[$key]);
-                    $tableau[$key] = $tableau[$index];
-                    unset($tableau[$index]);
+                    $tableau[$key] = $tmp;
                     break;
-                }else {$changé = FALSE;}
+                } else {
+                    $changé = FALSE;
+                }
         }
     }
 }
